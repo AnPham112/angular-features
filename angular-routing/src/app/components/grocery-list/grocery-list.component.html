@@ -1,0 +1,10 @@
+<p>grocery-list works!</p>
+
+<ul>
+  @for (grocery of groceries(); track grocery.id) {
+  <li>
+    {{ grocery.name }}
+    <a [routerLink]="['/groceries/edit', grocery.id]">Edit</a>
+  </li>
+  }
+</ul>
