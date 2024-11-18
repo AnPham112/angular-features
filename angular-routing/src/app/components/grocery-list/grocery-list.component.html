@@ -4,7 +4,9 @@
   @for (grocery of groceries(); track grocery.id) {
   <li>
     {{ grocery.name }}
-    <a [routerLink]="['/groceries/edit', grocery.id]">Edit</a>
+    <a [routerLink]="['details', grocery.id]">Edit</a>
   </li>
   }
 </ul>
+
+<router-outlet></router-outlet>

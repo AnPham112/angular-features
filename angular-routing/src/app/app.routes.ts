@@ -8,11 +8,8 @@ export const routes: Routes = [
   { path: 'first-component', component: FirstComponent },
   { path: 'second-component', component: SecondComponent },
   {
-    path: 'groceries',
+    path: 'groceries/:categoryId',
     component: GroceryListComponent,
-  },
-  {
-    path: 'groceries/edit/:id',
-    component: GroceryItemComponent,
+    children: [{ path: 'details/:groceryId', component: GroceryItemComponent }],
   },
 ];
