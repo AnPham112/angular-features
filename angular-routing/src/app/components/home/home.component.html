@@ -1,0 +1,11 @@
+<p>home works!</p>
+<!-- localhost:4200/home/items -->
+<a [routerLink]="['/home/items']">Go to Items</a>
+<br />
+<!-- localhost:4200/items -->
+<a [routerLink]="['/items']">Go to Items</a>
+<br />
+<!-- localhost:4200/home/items -->
+<a [routerLink]="['items']">Go to Items</a>
+<br />
+<button (click)="goToItem($event)">Go to Items</button>

@@ -6,11 +6,37 @@ import { GroceryItemComponent } from './components/grocery-item/grocery-item.com
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { ErrorHandler, inject } from '@angular/core';
+import { ChildAComponent } from './components/child-a/child-a.component';
+import { ChildBComponent } from './components/child-b/child-b.component';
+import { HomeComponent } from './components/home/home.component';
+import { ItemsComponent } from './components/items/items.component';
+
+// title do not change when navigate to other pages without title
+// const resolvesChildATitle = () => {
+//   return Promise.resolve('Child A - Dynamic title');
+// };
 
 export const routes: Routes = [
   { path: '', redirectTo: '/first-component', pathMatch: 'full' },
-  { path: 'first-component', component: FirstComponent },
+  {
+    path: 'first-component',
+    title: 'First Component',
+    component: FirstComponent,
+    children: [
+      {
+        path: 'child-a',
+        component: ChildAComponent,
+        title: () => Promise.resolve('Child A'),
+      },
+      {
+        path: 'child-b',
+        component: ChildBComponent,
+      },
+    ],
+  },
   { path: 'second-component', component: SecondComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'home/items', component: ItemsComponent },
   { path: 'user/:userId', component: UserComponent },
   {
     path: 'old-user-page',
