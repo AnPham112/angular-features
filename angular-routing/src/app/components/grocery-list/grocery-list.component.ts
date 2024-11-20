@@ -19,7 +19,7 @@ export class GroceryListComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    console.log('grocery signal id: ', this.groceryId());
-    console.log('category signal id: ', this.categoryId());
+    // console.log('grocery signal id: ', this.groceryId());
+    // console.log('category signal id: ', this.categoryId());
   }
 }

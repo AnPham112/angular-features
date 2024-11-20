@@ -10,6 +10,8 @@ import { ChildAComponent } from './components/child-a/child-a.component';
 import { ChildBComponent } from './components/child-b/child-b.component';
 import { HomeComponent } from './components/home/home.component';
 import { ItemsComponent } from './components/items/items.component';
+import { HeroListComponent } from './components/hero-list/hero-list.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 // title do not change when navigate to other pages without title
 // const resolvesChildATitle = () => {
@@ -37,6 +39,8 @@ export const routes: Routes = [
   { path: 'second-component', component: SecondComponent },
   { path: 'home', component: HomeComponent },
   { path: 'home/items', component: ItemsComponent },
+  { path: 'hero', component: HeroListComponent },
+  { path: 'hero/:id', component: HeroDetailComponent },
   { path: 'user/:userId', component: UserComponent },
   {
     path: 'old-user-page',

@@ -27,6 +27,9 @@ export class HomeComponent {
     // this.router.navigate(['/home/items']);
 
     // localhost:4200/home/items
+    // this.router.navigate(['home', 'items']);
+
+    // localhost:4200/home/items
     this.router.navigate(['items'], { relativeTo: this.route });
   }
 }

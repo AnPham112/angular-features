@@ -22,7 +22,7 @@ export class GroceryItemComponent implements OnInit {
   );
 
   ngOnInit() {
-    console.log('categoryId: ', this.categoryId());
-    console.log('groceryId: ', this.groceryId());
+    // console.log('categoryId: ', this.categoryId());
+    // console.log('groceryId: ', this.groceryId());
   }
 }
