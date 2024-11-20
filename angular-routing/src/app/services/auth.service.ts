@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private loggedIn = false;
 
+  hasPermission() {
+    return false;
+  }
+
   isLoggedIn() {
     return this.loggedIn;
   }

@@ -1,18 +1,17 @@
-import { Routes } from '@angular/router';
-import { FirstComponent } from './components/first/first.component';
-import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
-import { GroceryItemComponent } from './components/grocery-item/grocery-item.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { UserComponent } from './components/user/user.component';
 import { ErrorHandler, inject } from '@angular/core';
+import { Routes } from '@angular/router';
+import { authGuard } from '../guards/auth.guard';
 import { ChildAComponent } from './components/child-a/child-a.component';
+import { FirstComponent } from './components/first/first.component';
+import { GroceryItemComponent } from './components/grocery-item/grocery-item.component';
+import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
+import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { ItemsComponent } from './components/items/items.component';
-import { HeroListComponent } from './components/hero-list/hero-list.component';
-import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { authGuard } from '../guards/auth.guard';
-import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UserComponent } from './components/user/user.component';
+import { hasPermissionGuard } from '../guards/hasPermission.guard';
 
 // title do not change when navigate to other pages without title
 // const resolvesChildATitle = () => {
@@ -25,12 +24,20 @@ export const routes: Routes = [
     path: 'first-component',
     title: 'First Component',
     component: FirstComponent,
+    // if hasPermissionGuard is true, we can access child-a and child-b
+    // if not, navigate to Not Found page
+    // => check permission for both child-a and child-b
+    // canActivateChild: [hasPermissionGuard],
     children: [
       {
         path: 'child-a',
         component: ChildAComponent,
         // title: 'childA',
         title: () => Promise.resolve('Child A'),
+        // if hasPermissionGuard is true, we can access component child-a
+        // if not, navigate to Not Found page
+        // => do not check permission child-b
+        canActivate: [hasPermissionGuard],
       },
       {
         path: 'child-b',
