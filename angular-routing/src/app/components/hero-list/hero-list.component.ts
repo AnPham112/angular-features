@@ -18,6 +18,14 @@ export class HeroListComponent {
 
   goToHero(hero: Hero) {
     // this.router.navigate([`/hero/${hero.id}`]);
-    this.router.navigate(['hero', hero.id]);
+
+    // endcode -> avoid
+    // this.router.navigate([`herodetail?id=${hero.id}`]);
+
+    // fragment: 'testne' -> #testne
+    this.router.navigate(['herodetail'], {
+      queryParams: { id: hero.id },
+      fragment: 'testne',
+    });
   }
 }

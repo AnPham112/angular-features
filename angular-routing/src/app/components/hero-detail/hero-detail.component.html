@@ -3,8 +3,12 @@
 </div>
 
 <!-- mặc dù bấm navigate qua batman detail, 
- nếu sử dụng route.snapshot.params thì hero.name sẽ không thay đổi vẫn giữ là Superman
- vì page hiện tại đang là hero detail mà dùng route.snapshot.params trong ngOnInit thì
- khi navigate qua batman nó vẫn đang là page hero detail nên không gọi lại ngOnInit
- -->
-<a [routerLink]="['/hero/2']">Go to Batman</a>
+    nếu sử dụng route.snapshot.params thì hero.name sẽ không thay đổi vẫn giữ là Superman
+    vì page hiện tại đang là hero detail mà dùng route.snapshot.params trong ngOnInit thì
+    khi navigate qua batman nó vẫn đang là page hero detail nên không gọi lại ngOnInit
+    -->
+<!-- <a [routerLink]="['/hero/2']">Go to Batman</a> -->
+
+<a [routerLink]="['/herodetail']" [queryParams]="{ id: 2 }" [fragment]="'abc'"
+  >Go to batman</a
+>

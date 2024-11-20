@@ -40,7 +40,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/items', component: ItemsComponent },
   { path: 'hero', component: HeroListComponent },
-  { path: 'hero/:id', component: HeroDetailComponent },
+  { path: 'herodetail', component: HeroDetailComponent },
   { path: 'user/:userId', component: UserComponent },
   {
     path: 'old-user-page',
