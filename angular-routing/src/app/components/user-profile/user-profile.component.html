@@ -1,0 +1,9 @@
+<h2>Update user profile</h2>
+<div>
+  <label>User name</label>
+  <input type="text" [ngModel]="username" (input)="onChange($event)" />
+</div>
+
+<div>
+  <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Dashboard</a>
+</div>

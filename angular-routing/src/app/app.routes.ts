@@ -12,6 +12,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { hasPermissionGuard } from '../guards/hasPermission.guard';
+import { canDeactivateUserProfile } from '../guards/deactivate.guard';
 
 // title do not change when navigate to other pages without title
 // const resolvesChildATitle = () => {
@@ -71,6 +72,14 @@ export const routes: Routes = [
         ({ DashboardComponent }) => DashboardComponent
       ),
     canActivate: [authGuard],
+  },
+  {
+    path: 'user-profile',
+    loadComponent: () =>
+      import('./components/user-profile/user-profile.component').then(
+        ({ UserProfileComponent }) => UserProfileComponent
+      ),
+    canDeactivate: [canDeactivateUserProfile],
   },
   { path: 'hero', component: HeroListComponent },
   { path: 'herodetail', component: HeroDetailComponent },
