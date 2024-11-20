@@ -32,11 +32,20 @@ export const routes: Routes = [
       },
       {
         path: 'child-b',
-        component: ChildBComponent,
+        loadComponent: () =>
+          import('./components/child-b/child-b.component').then(
+            ({ ChildBComponent }) => ChildBComponent
+          ),
       },
     ],
   },
-  { path: 'second-component', component: SecondComponent },
+  {
+    path: 'second-component',
+    loadComponent: () =>
+      import('./components/second/second.component').then(
+        ({ SecondComponent }) => SecondComponent
+      ),
+  },
   { path: 'home', component: HomeComponent },
   { path: 'home/items', component: ItemsComponent },
   { path: 'hero', component: HeroListComponent },
