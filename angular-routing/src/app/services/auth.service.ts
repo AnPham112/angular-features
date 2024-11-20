@@ -4,10 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  private loggedIn = false;
+  private loggedIn = true;
 
   hasPermission() {
     return false;
+  }
+
+  getUserRole() {
+    return 'admin1';
   }
 
   isLoggedIn() {
