@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(post of products$ | async; track post.id) {
+    <tr>
+      <td>{{ post.title }}</td>
+      <td>{{ post.description }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

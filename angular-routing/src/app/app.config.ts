@@ -8,10 +8,12 @@ import {
 
 import { routes } from './app.routes';
 import { TemplatePageTitleStrategy } from './services/TemplateTitleStrategy';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHttpClient(),
     provideRouter(
       routes,
       withComponentInputBinding(),

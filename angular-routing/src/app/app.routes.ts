@@ -14,6 +14,8 @@ import { UserComponent } from './components/user/user.component';
 import { hasPermissionGuard } from '../guards/hasPermission.guard';
 import { canDeactivateUserProfile } from '../guards/deactivate.guard';
 import { adminCanMatch } from '../guards/match.guard';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostResolver } from '../guards/resolve.guard';
 
 // title do not change when navigate to other pages without title
 // const resolvesChildATitle = () => {
@@ -60,6 +62,12 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/items', component: ItemsComponent },
   {
+    path: 'posts',
+    component: PostListComponent,
+    // resolve: { posts: PostResolver },
+    resolve: { products: PostResolver },
+  },
+  {
     path: 'login',
     loadComponent: () =>
       import('./components/login/login.component').then(
@@ -83,7 +91,6 @@ export const routes: Routes = [
     canDeactivate: [canDeactivateUserProfile],
   },
   // nếu adminCanMatch là false thì sẽ vẫn sẽ giữ url hiện tại và show Not Found page
-  // nếu không dùng canMatch mà dùng canActivate thì nó sẽ navigate đến app component với router outlet là nội dung rỗng
   { path: 'hero', component: HeroListComponent, canMatch: [adminCanMatch] },
   { path: 'herodetail', component: HeroDetailComponent },
   { path: 'user/:userId', component: UserComponent },
