@@ -1,0 +1,12 @@
+<ng-template #notFoundContent>
+  <h2>Not Found</h2>
+</ng-template>
+
+<ng-template #dynamicContent>
+  <h2>Dynamic Title</h2>
+  <p>This is a description passed from the parent.</p>
+</ng-template>
+
+<button (click)="toggleShow()">Toggle show</button>
+
+<div #container></div>
