@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "resource-api": {
+    "dynamic-component": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/resource-api",
+            "outputPath": "dist/dynamic-component",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "resource-api:build:production"
+              "buildTarget": "dynamic-component:build:production"
             },
             "development": {
-              "buildTarget": "resource-api:build:development"
+              "buildTarget": "dynamic-component:build:development"
             }
           },
           "defaultConfiguration": "development"

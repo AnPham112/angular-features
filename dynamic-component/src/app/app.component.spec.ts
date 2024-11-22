@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'resource-api' title`, () => {
+  it(`should have the 'dynamic-component' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('resource-api');
+    expect(app.title).toEqual('dynamic-component');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, resource-api');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, dynamic-component');
   });
 });

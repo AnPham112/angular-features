@@ -1,0 +1,8 @@
+<!-- <div>
+  <app-admin-profile *ngIf="isAdmin"></app-admin-profile>
+  <app-user-profile *ngIf="!isAdmin"></app-user-profile>
+</div> -->
+
+<div>
+  <ng-container *ngComponentOutlet="getProfileComponent()"></ng-container>
+</div>
